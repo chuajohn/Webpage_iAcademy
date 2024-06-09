@@ -28,46 +28,49 @@ header {
     height: 48px;
 }
 
-header img {
+#logo {
     height: 32px;
     margin: auto;
-    margin-right: 8px;
+    /* margin-right: 8px; */
 }
 
-/* sidebar button */
-header button {
+header #hamburger_button {
+    /* display: none; */
+    position: absolute;
+}
+
+#hamburger_button {
     height: 48px;
     width: 48px;
     border: 0;
     background-color: inherit;
     color: inherit;
     display: inline;
+    padding: 0;
+    cursor: pointer;
+}
+
+#hamburger_button img {
+    width: 32px;
+    height: 32px;
 }
 
 #navbar {
     background-color: #90bcff;
     height: 100%;
-    width: 320px;
     position: fixed;
     top: 0;
     padding: 0;
     overflow: hidden;
     transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
-#navbar.nav_hidden {
     visibility: collapse;
     width: 0;
-    transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-#navbar button {
-    height: 48px;
-    width: 48px;
-    border: 0;
-    background-color: inherit;
-    color: inherit;
-    display: inline;
+#navbar.nav_shown {
+    visibility: visible;
+    width: 320px;
+    transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 #navbar ul {
@@ -75,7 +78,6 @@ header button {
     padding: 16px 0px;
     margin: 0;
     overflow: hidden;
-
 }
 
 #navbar ul li a {
@@ -84,7 +86,8 @@ header button {
     color: inherit;
     text-decoration: none;
     padding: 16px;
-    transition: background-color 0.5s, opacity 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) 0.25s;
+    opacity: 0%;
+    transition: background-color 0.5s, opacity 0.10s ;
 }
 
 #navbar ul li a:hover {
@@ -92,30 +95,10 @@ header button {
     transition: background-color 0.5s;
 }
 
-#navbar.nav_hidden ul li a {
-    opacity: 0;
-    transition: opacity 0.10s;
+#navbar.nav_shown ul li a {
+    opacity: 100%;
+    transition: opacity 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) 0.25s;
 }
-
-/* header nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 10px 0 0;
-}
-
-header nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-header nav ul li a {
-    color: #fff;
-    text-decoration: none;
-}
-
-header nav ul li a:hover {
-    text-decoration: underline;
-} */
 
 main {
     display: flex;
@@ -129,18 +112,19 @@ main::before {
     content: "";
     width: 100%;
     height: 100%;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     background-color: #0000008f;
-    opacity: 100%;
     transition: all 0.25s;
-}
-
-main.nav_hidden::before {
+    align-content: stretch;
     visibility: collapse;
     opacity: 0%;
-    transition: all 0.25s;
+}
+
+main.nav_shown::before {
+    visibility: visible;
+    opacity: 100%;
 }
 
 .section_container {
@@ -204,4 +188,3 @@ footer {
 footer p {
     margin: 0;
 }
-
