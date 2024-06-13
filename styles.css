@@ -3,41 +3,38 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: url('background.jpg') no-repeat center center fixed;
+    background: url('images/iAc-Makati.png') no-repeat center center fixed;
     background-size: cover;
-    /* color: #333; */
+    color: #fff; 
+    position: relative;
 }
 
-/* body::before {
+body::before {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5); 
     z-index: -1;
-} */
+}
 
 header {
-    background-color: rgb(0, 64, 128);
+    background-color: rgba(0, 64, 128, 0.8); 
     color: #fff;
     position: fixed;
     width: 100%;
     display: flex;
+    align-items: center;
     top: 0;
     height: 48px;
+    z-index: 10;
+    padding: 0 20px;
 }
 
 #logo {
     height: 32px;
-    margin: auto;
-    /* margin-right: 8px; */
-}
-
-header #hamburger_button {
-    /* display: none; */
-    position: absolute;
 }
 
 #hamburger_button {
@@ -46,7 +43,6 @@ header #hamburger_button {
     border: 0;
     background-color: inherit;
     color: inherit;
-    display: inline;
     padding: 0;
     cursor: pointer;
 }
@@ -57,172 +53,68 @@ header #hamburger_button {
 }
 
 #navbar {
-    background-color: #90bcff;
+    background-color: rgba(144, 188, 255, 0.8); 
     height: 100%;
     position: fixed;
     top: 0;
-    padding: 0;
+    left: 0;
+    padding: 20px;
     overflow: hidden;
     transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
-    visibility: collapse;
+    visibility: hidden;
     width: 0;
 }
 
 #navbar.nav_shown {
     visibility: visible;
     width: 320px;
-    transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 #navbar ul {
     list-style-type: none;
-    padding: 16px 0px;
+    padding: 0;
     margin: 0;
-    overflow: hidden;
 }
 
 #navbar ul li a {
     display: block;
     font-weight: bold;
-    color: inherit;
+    color: #fff;
     text-decoration: none;
     padding: 16px;
-    opacity: 0%;
-    transition: background-color 0.5s, opacity 0.10s ;
 }
 
 #navbar ul li a:hover {
     background-color: #0000003b;
-    transition: background-color 0.5s;
-}
-
-#navbar.nav_shown ul li a {
-    opacity: 100%;
-    transition: opacity 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) 0.25s;
 }
 
 main {
     display: flex;
     justify-content: center;
-    /* padding: 20px; */
     flex-wrap: wrap;
-    margin-top: 48px;
+    margin-top: 60px; 
+    padding: 20px;
 }
 
-main::before {
-    content: "";
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: #0000008f;
-    transition: all 0.25s;
-    align-content: stretch;
-    visibility: collapse;
-    opacity: 0%;
+main section {
+    background: rgba(0, 0, 0, 0.5); 
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    width: calc(100% - 40px);
+    max-width: 600px;
 }
 
-main.nav_shown::before {
-    visibility: visible;
-    opacity: 100%;
-}
-
-/* ======== PER-PAGE STYLES ======== */
-
-footer {
-    background-color: rgba(0, 64, 128, 0.8);
+/* footer {
+    background-color: rgba(0, 64, 128, 0.8); 
     color: #fff;
     text-align: center;
     padding: 10px 0;
-    /* position: fixed; */
+    position: fixed;
     width: 100%;
     bottom: 0;
-}
-
-footer p {
-    margin: 0;
-}
-
-.section_container {
-    /* background-color: rgba(255, 255, 255, 0.9); */
-    /* padding: 20px; */
-    border-radius: 8px;
-    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
-    width: 100%;
-    max-width: 600px;
-    /* margin: 10px; */
-}
-
-.section_container h2 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.section_container p {
-    margin: 16px;
-}
-
-.img_title_container {
-    position: relative;
-    height: 200px;
-}
-
-.img_title_container > h1 {
-    position: absolute;
-    top: 0;
-    color: #ffffff;
-    /* margin-left: 20px; */
-    font-size: 2em;
-    text-shadow: #000000 0 0 8px;
-    text-align: center;
-    width: 100%;
-}
-
-.img_title_container .overlay {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(rgba(62, 107, 255, 0.815), rgba(0, 0, 0, 0));
-}
-
-.img_title_container img {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    object-fit: cover;
-}
-
-/* .about p {
-    margin: 10px 0;
 } */
 
-.registration-form label {
-    display: block;
-    margin: 10px 0 5px;
-}
-
-.registration-form input,
-.registration-form select {
-    width: calc(100% - 22px);
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-bottom: 20px;
-}
-
-.registration-form button {
-    width: 100%;
-    padding: 10px;
-    background-color: #004080;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1em;
-}
-
-.registration-form button:hover {
-    background-color: #003060;
-}
+/* footer p {
+    margin: 0;
+} */
