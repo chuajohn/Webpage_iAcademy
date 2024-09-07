@@ -32,13 +32,26 @@ header {
 
 #logo {
     height: 32px;
-    margin: auto;
+    /* margin: auto; */
     /* margin-right: 8px; */
+    margin: auto;
+    margin-left: 8px;
 }
 
 header #hamburger_button {
     /* display: none; */
-    position: absolute;
+    /* position: absolute; */
+}
+
+header #user {
+    /* position: absolute; */
+    right: 0;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    margin-right: 16px;
+    font-weight: bold;
 }
 
 #hamburger_button {
